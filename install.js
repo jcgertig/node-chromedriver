@@ -17,7 +17,7 @@ var configuredfilePath = process.env.npm_config_chromedriver_filepath || process
 // adapt http://chromedriver.storage.googleapis.com/
 cdnUrl = cdnUrl.replace(/\/+$/, '');
 var downloadUrl = cdnUrl + '/%s/chromedriver_%s.zip';
-var platform = process.platform;
+var platform = process.env.npm_config_platform || process.platform;
 
 var chromedriver_version = process.env.npm_config_chromedriver_version || process.env.CHROMEDRIVER_VERSION || helper.version;
 if (platform === 'linux') {
